@@ -6,6 +6,7 @@ using System.Text;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
 using Android.Util;
@@ -53,9 +54,11 @@ namespace MyDraw
 
         public void Undo()
         {
+            if (completedPolylines.Count == 0) return;
             completedPolylines.RemoveAt(completedPolylines.Count-1);
             Invalidate();
         }
+     
 
         // Overrides
         public override bool OnTouchEvent(MotionEvent args)
@@ -150,5 +153,6 @@ namespace MyDraw
                 canvas.DrawPath(polyline.Path, paint);
             }
         }
+      
     }
 }

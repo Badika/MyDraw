@@ -29,6 +29,7 @@ D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\res\mipmap-xxhdpi\ic_la
 D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\res\mipmap-xxxhdpi\ic_launcher.png
 D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\res\mipmap-xxxhdpi\ic_launcher_foreground.png
 D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\res\mipmap-xxxhdpi\ic_launcher_round.png
+D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\res\mipmap-anydpi-v26\bmp.jpg
 D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\R.cs.flag
 D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\R.txt
 D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\uploadflags.txt
@@ -53,7 +54,6 @@ D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\linksrc\System.Net.Http
 D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\linksrc\System.Runtime.Serialization.pdb
 D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\linksrc\System.ServiceModel.Internals.pdb
 D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\linksrc\Mono.Security.pdb
-D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\MyDraw.csprojAssemblyReference.cache
 D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\android\assets\Mono.Android.pdb
 D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\android\assets\Mono.Security.pdb
 D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\android\assets\mscorlib.pdb
@@ -65,4 +65,5 @@ D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\android\assets\System.p
 D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\android\assets\System.Runtime.Serialization.pdb
 D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\android\assets\System.ServiceModel.Internals.pdb
 D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\android\assets\System.Xml.pdb
+D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\MyDraw.csprojAssemblyReference.cache
 D:\Projects\MyDraw\MyDraw\MyDraw\obj\Debug\MonoAndroid81\linksrc\MyDraw.pdb
