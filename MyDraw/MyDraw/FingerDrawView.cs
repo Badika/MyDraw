@@ -31,6 +31,7 @@ namespace MyDraw
     {
         Dictionary<int, FingerPaintPolyline> inProgressPolylines = new Dictionary<int, FingerPaintPolyline>();
         List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
+        List<FingerPaintPolyline> redoPolylines = new List<FingerPaintPolyline>();
         Paint paint = new Paint();
 
         // External interface accessed from MainActivity
@@ -49,16 +50,28 @@ namespace MyDraw
         public void ClearAll()
         {
             completedPolylines.Clear();
+            redoPolylines.Clear();
             Invalidate();
         }
 
         public void Undo()
         {
             if (completedPolylines.Count == 0) return;
+            redoPolylines.Add(completedPolylines[completedPolylines.Count - 1]);
             completedPolylines.RemoveAt(completedPolylines.Count-1);
+
             Invalidate();
         }
-     
+
+        public void Redo()
+        {
+            if (redoPolylines.Count == 0) return;
+            completedPolylines.Add(redoPolylines[redoPolylines.Count - 1]);
+
+            redoPolylines.RemoveAt(redoPolylines.Count - 1);
+
+            Invalidate();
+        }
 
         // Overrides
         public override bool OnTouchEvent(MotionEvent args)
@@ -108,6 +121,7 @@ namespace MyDraw
 
                     // Transfer the in-progress polyline to a completed polyline
                     completedPolylines.Add(inProgressPolylines[id]);
+                    if (redoPolylines.Count != 0) redoPolylines.Clear();
                     inProgressPolylines.Remove(id);
                     break;
 

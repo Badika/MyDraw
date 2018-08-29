@@ -22,6 +22,7 @@ namespace MyDraw
         private SeekBar sizeBar;
         private Button clearButton;
         private Button undoButton;
+        private Button redoButton;
         private Button imageButton;
         private ImageView img;
 
@@ -37,21 +38,18 @@ namespace MyDraw
             Initialize();
             AddEvents();
 
-          ;
+          
 
             GradientDrawable test = new GradientDrawable(GradientDrawable.Orientation.RightLeft, new int[] { new Color(255,0,0), new Color(255, 0, 255), new Color(0,0,255), new Color(0,255,255), new Color(0,255,0), new Color(255,255,0), new Color(255,0,0) })//(0, 0, GetWidth(), 0, new int[] { Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Violet }, null, Shader.TileMode.Clamp);
             ;
-           
-            // ShapeDrawable shape = new ShapeDrawable(new RectShape());
-
-            //Bitmap bmp = Bitmap.CreateBitmap(new int[] { Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Violet }, GetWidth(), 10, null);
-            //Drawable temp = new BitmapDrawable(bmp);
-
-       //     shape.Paint.SetShader(test);
-
+             
             colorBar.SetProgressDrawableTiled(test);
-        
+            //colorBar.SetThumb(new ColorDrawable(new Color(255, 0, 0)));
+      
+
         }
+
+   
 
         private int GetWidth()
         {
@@ -71,6 +69,7 @@ namespace MyDraw
             sizeBar = FindViewById<SeekBar>(Resource.Id.seekbar_size);
             clearButton = FindViewById<Button>(Resource.Id.clear_button);
             undoButton = FindViewById<Button>(Resource.Id.undo_button);
+            redoButton = FindViewById<Button>(Resource.Id.redo_button);
             imageButton = FindViewById<Button>(Resource.Id.load_image);
         //    img = FindViewById<ImageView>(Resource.Id.imageViewEditImage);
         }
@@ -81,12 +80,17 @@ namespace MyDraw
             clearButton.Click += ClearButton_Click;
             undoButton.Click += UndoButton_Click;
             imageButton.Click += ImageButton_Click;
-            
+            redoButton.Click += RedoButton_Click;
+        }
+
+        private void RedoButton_Click(object sender, EventArgs e)
+        {
+            fingerDrawView.Redo();
         }
 
         private void ImageButton_Click(object sender, System.EventArgs e)
         {
-            //img.set("@mipmap/bmp.jpg");
+        
         }
 
         private void UndoButton_Click(object sender, System.EventArgs e)
@@ -136,31 +140,9 @@ namespace MyDraw
         }
         private void ColorBar_ProgressChanged(object sender, SeekBar.ProgressChangedEventArgs e)
         {
-            //    Int64 c1 = 0xFFFF0000; // ARGB representation of RED
-            //    Int64 c2 = 0xFFFFFF00; // ARGB representation of YELLOW
-            //    Int64 c3 = 0xFF00FF00; // ARGB representation of GREEN
-            //    ArgbEvaluator evaluator = new ArgbEvaluator();
-
-            //    long thumb1 = (long)evaluator.Evaluate(0f, c1, c2); // 0f/9f = 0f
-            //long thumb2 = (long)evaluator.Evaluate(2f / 9f, c1, c2);
-            //int thumb3 = (int)evaluator.Evaluate(4f / 9f, c1, c2);
-            //int thumb4 = (int)evaluator.Evaluate(6f / 9f, c1, c2);
-            //       long thumb5 = (long)evaluator.Evaluate(8f / 9f, c1, c2);
-            //int thumb6 = (int)evaluator.Evaluate(1f / 9f, c2, c3);
-            //int thumb7 = (int)evaluator.Evaluate(3f / 9f, c2, c3);
-            //int thumb8 = (int)evaluator.Evaluate(5f / 9f, c2, c3);
-            //int thumb9 = (int)evaluator.Evaluate(7f / 9f, c2, c3);
-            //int thumb10 = (int)evaluator.Evaluate(1f, c2, c3); // 9f/9f = 1f
             Color clickedColor;
-            SeekBar seekBar = (SeekBar)sender;                                  //SeekBar seekbar = (SeekBar)sender;
+            SeekBar seekBar = (SeekBar)sender;   
             System.Diagnostics.Debug.WriteLine(string.Format("progress {0}, width {1}, lisrcount {2}", seekBar.Progress,  GetWidth(), colors.Count));
-
-
-            // GradientDrawable test = new GradientDrawable(GradientDrawable.Orientation.RightLeft, new int[] { Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Violet });
-            //  ColorDrawable[] colors = test.ToArray<ColorDrawable>(); 
-            //  clickedColor = new Color();
-
-            // int temp = Convert.ToInt32(seekBar.Progress * colors.Count*2 / GetWidth());
             try
             {
                 clickedColor = colors[(int)((colors.Count / 100.0) * seekBar.Progress)];

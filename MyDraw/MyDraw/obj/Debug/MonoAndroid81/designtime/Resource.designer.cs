@@ -2504,8 +2504,8 @@ namespace MyDraw
 			// aapt resource value: 0x7F0C0041
 			public const int list_item = 2131492929;
 			
-			// aapt resource value: 0x7F010006
-			public const int load_image = 2130771974;
+			// aapt resource value: 0x7F010007
+			public const int load_image = 2130771975;
 			
 			// aapt resource value: 0x7F0C0042
 			public const int masked = 2131492930;
@@ -2522,8 +2522,8 @@ namespace MyDraw
 			// aapt resource value: 0x7F0C0046
 			public const int multiply = 2131492934;
 			
-			// aapt resource value: 0x7F010007
-			public const int myFingerDrawView = 2130771975;
+			// aapt resource value: 0x7F010008
+			public const int myFingerDrawView = 2130771976;
 			
 			// aapt resource value: 0x7F0C0047
 			public const int navigation_header_container = 2131492935;
@@ -2563,6 +2563,9 @@ namespace MyDraw
 			
 			// aapt resource value: 0x7F0C0053
 			public const int radio = 2131492947;
+			
+			// aapt resource value: 0x7F010006
+			public const int redo_button = 2130771974;
 			
 			// aapt resource value: 0x7F0C0054
 			public const int right = 2131492948;
